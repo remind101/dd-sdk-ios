@@ -2,4 +2,4 @@
 
 Find in this folder dedicated documentation for:
 
-* [Collect and send logs from your Android application to Datadog](/log_collection.md).
+* [Collect and send logs from your IOS application to Datadog](/log_collection.md).
