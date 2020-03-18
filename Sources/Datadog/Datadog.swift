@@ -50,6 +50,7 @@ public class Datadog {
     /// - Parameters:
     ///   - appContext: context passing information about the app.
     ///   - configuration: the SDK configuration obtained using `Datadog.Configuration.builderUsing(clientToken:)`.
+    @available (iOS 12.0, *)
     public static func initialize(appContext: AppContext, configuration: Configuration) {
         do {
             try initializeOrThrow(appContext: appContext, configuration: configuration)
@@ -84,6 +85,7 @@ public class Datadog {
     internal let logsPersistenceStrategy: LogsPersistenceStrategy
     internal let logsUploadStrategy: LogsUploadStrategy
 
+    @available (iOS 12.0, *)
     private static func initializeOrThrow(appContext: AppContext, configuration: Configuration) throws {
         guard Datadog.instance == nil else {
             throw ProgrammerError(description: "SDK is already initialized.")
