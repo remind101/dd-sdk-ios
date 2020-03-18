@@ -35,6 +35,7 @@ internal protocol CarrierInfoProviderType {
     var current: CarrierInfo? { get }
 }
 
+@available (iOS 12.0, *)
 internal class CarrierInfoProvider: CarrierInfoProviderType {
     #if os(iOS)
     private let networkInfo: CTTelephonyNetworkInfo

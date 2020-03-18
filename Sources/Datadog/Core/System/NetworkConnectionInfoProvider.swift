@@ -39,6 +39,7 @@ internal protocol NetworkConnectionInfoProviderType {
     var current: NetworkConnectionInfo { get }
 }
 
+@available (iOS 12.0, *)
 internal class NetworkConnectionInfoProvider: NetworkConnectionInfoProviderType {
     private let queue = DispatchQueue.global(qos: .utility)
     private let monitor: NWCurrentPathMonitor
@@ -90,6 +91,7 @@ internal class NetworkConnectionInfoProvider: NetworkConnectionInfoProviderType 
 // MARK: - Utilities
 
 /// Utility protocol to inject `NWPathMonitor` to `NetworkConnectionInfoProvider`.
+@available (iOS 12.0, *)
 internal protocol NWCurrentPathMonitor {
     func start(queue: DispatchQueue)
     func cancel()
@@ -97,6 +99,7 @@ internal protocol NWCurrentPathMonitor {
 }
 
 /// Utility type to aggregate current path info provided by `NWPathMonitor`,
+@available (iOS 12.0, *)
 internal struct NWCurrentPathInfo {
     let availableInterfaceTypes: [NWInterface.InterfaceType]
     let status: NWPath.Status
@@ -107,6 +110,7 @@ internal struct NWCurrentPathInfo {
 }
 
 /// Apple's `NWPathMonitor` conformance to utility `NWCurrentPathMonitor`.
+@available (iOS 12.0, *)
 extension NWPathMonitor: NWCurrentPathMonitor {
     func currentPathInfo() -> NWCurrentPathInfo {
         let isCurrentPathConstrained: Bool? = {

@@ -26,6 +26,7 @@ public class DDAppContext: NSObject {
 public class DDDatadog: NSObject {
     // MARK: - Public
 
+    @available (iOS 12.0, *)
     public static func initialize(appContext: DDAppContext, configuration: DDConfiguration) {
         Datadog.initialize(
             appContext: appContext.sdkAppContext,
