@@ -10,10 +10,10 @@ Pod::Spec.new do |s|
   s.authors            = { "Kris Woodall" => "k.woodall@remind101.com" }
 
   s.swift_version      = '5.1'
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '11.0'
   s.osx.deployment_target = '10.14'
 
-  s.source = { :git => 'https://github.com/remind101/dd-sdk-ios', :tag => s.version.to_s }
+  s.source = { :git => 'https://github.com/remind101/dd-sdk-ios.git', :tag => s.version.to_s }
 
   s.source_files = "Sources/Datadog/**/*.swift"
 end
